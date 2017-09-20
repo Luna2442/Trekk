@@ -2,8 +2,17 @@ import React from 'react';
 
 const HikeTile = props => {
 
-  let geography;
+  let deleteHike = () => {
+    let path = location.pathname
+    fetch(`/api/v1/${path}/hikes/${props.id}`, {
+      credentials: 'same-origin',
+      method: 'DELETE'
+    })
+    props.aggregateHikes()
+  }
 
+  let geography;
+  let deleteButton;
   if(props.latitude && props.longitude){
     geography =
     <div>
@@ -13,6 +22,7 @@ const HikeTile = props => {
         <li>Longitude: {props.longitude}</li>
       </ul>
     </div>
+    deleteButton = <input type='button delete-button' className="button" value='Delete this hike' onClick={deleteHike} />
   }
 
   return(
@@ -23,7 +33,7 @@ const HikeTile = props => {
         <p>{props.address}</p>
         {geography}
       </div>
-
+      {deleteButton}
       <hr/>
     </div>
   )

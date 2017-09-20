@@ -8,7 +8,24 @@ class JournalContainer extends Component {
       hikes: [],
       id: null
     }
+    this.aggregateHikes = this.aggregateHikes.bind(this)
     this.handleOpenHike = this.handleOpenHike.bind(this)
+  }
+
+  aggregateHikes(){
+    setTimeout(function(){
+      let path = location.pathname
+      fetch(`/api/v1/${path}/`, {
+        credentials: 'same-origin'
+      })
+      .then(response => {
+        return response.json();
+      })
+      .then(body => {
+        this.setState({
+          hikes: body
+        })
+      })}.bind(this), 100)
   }
 
   handleOpenHike(id){
@@ -75,6 +92,7 @@ class JournalContainer extends Component {
           longitude = {longitude}
           types = {types}
           handleClick={handleClick}
+          aggregateHikes={this.aggregateHikes}
         />
       )
     })

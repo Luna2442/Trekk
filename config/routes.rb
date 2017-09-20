@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: redirect('/trails')
+  root to: redirect('/users/me')
 
   devise_for :users, controllers: {
         sessions: 'users/sessions'
@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:show]
+      resources :users, only: [:show] do
+        resources :hikes, only: [:destroy, :update, :show]
+      end
     end
   end
 
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :hikes, only: [:create, :destroy, :index, :show]
+      resources :hikes, only: [:create, :index]
     end
   end
 
