@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.4/foundation.min.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= stylesheet_link_tag    'navbar', media: 'all' %>
+    <%= stylesheet_link_tag    'trails', media: 'all' %>
+    <%= stylesheet_link_tag    'users', media: 'all' %>
+    <%= stylesheet_link_tag    'hikes', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
@@ -15,15 +18,16 @@
     <nav class="topnav" id="myTopnav">
       <% if user_signed_in? %>
         <div class=navigation><%= link_to "Home", "/users/#{current_user.id}" %></div>
-        <div class=navigation><%= link_to "Hikes", hikes_path %></div>
+        <div class=navigation><%= link_to "Find Trails", "/trails" %></div>
         <div class=username>Signed in as <%= current_user.email %></div>
         <div class=signin><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
       <%end%>
     </nav>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
+    <p class="notice"><%= flash[:notice] %></p>
+    <p class="alert"><%= flash[:alert] %></p>
+    <div class="row">
+      <%= yield %>
+    </div>
   </body>
 </html>

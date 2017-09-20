@@ -1,0 +1,39 @@
+// Place all the styles related to the trails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.trail-list {
+  float: left;
+  text-align: left;
+  color: white;
+}
+
+.row {
+  max-width: none;
+}
+
+.trail-search-list {
+  overflow-y: scroll;
+  height:600px;
+  background: #0a2013;
+  border-radius: 10px;
+  padding: 25px;
+  margin-right: 15px;
+  width: 57%;
+}
+
+.addTrailButton {
+  float: right;
+  padding: 10px;
+}
+
+.addTrailButton a:hover {
+    background-color: #3a949d;
+    color: white;
+}
+
+.map {
+  border: solid 10px #0a2013;
+  background: #0a2013;
+  border-radius: 10px;
+}

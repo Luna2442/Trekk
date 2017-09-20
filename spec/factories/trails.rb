@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :hike do
-
+  factory :trail do
+    
   end
 end

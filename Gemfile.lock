@@ -76,6 +76,8 @@ GEM
     ffi (1.9.18-x86-mingw32)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    httparty (0.15.6)
+      multi_xml (>= 0.5.2)
     i18n (0.8.6)
     jquery-rails (4.3.1)
       rails-dom-testing (>= 1, < 3)
@@ -100,6 +102,7 @@ GEM
     mini_mime (0.1.4)
     mini_portile2 (2.2.0)
     minitest (5.10.3)
+    multi_xml (0.6.0)
     nio4r (2.1.0)
     nio4r (2.1.0-java)
     nokogiri (1.8.0)
@@ -246,6 +249,7 @@ DEPENDENCIES
   capybara
   devise
   factory_girl_rails
+  httparty
   jquery-rails
   launchy
   listen (~> 3.0.5)
