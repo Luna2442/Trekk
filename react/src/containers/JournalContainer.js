@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import HikeTile from '../components/HikeTile';
+import NotesContainer from './NotesContainer';
 
 class JournalContainer extends Component {
   constructor(props){
@@ -98,9 +99,14 @@ class JournalContainer extends Component {
     })
 
     return(
-      <div className="small-12 medium-12 large-5 column journal-hikes-list">
-      <h3>My Hikes</h3>
-        {hikes}
+      <div>
+        <div className="small-12 medium-12 large-5 column journal-hikes-list">
+          <h3>My Hikes</h3>
+          {hikes}
+        </div>
+        <div className="small-12 medium-12 large-6 column journal-notes-list">
+          <NotesContainer selectedHike={this.state.id} changeSelectedHike={this.handleOpenHike} />
+        </div>
       </div>
     )
   }

@@ -22,7 +22,7 @@ const HikeTile = props => {
         <li>Longitude: {props.longitude}</li>
       </ul>
     </div>
-    deleteButton = <input type='button delete-button' className="button" value='Delete this hike' onClick={deleteHike} />
+    deleteButton = <input type='button delete-button' className="button" defaultValue='Delete this hike' onClick={deleteHike} />
   }
 
   return(
