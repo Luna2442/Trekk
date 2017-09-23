@@ -100,11 +100,11 @@ class JournalContainer extends Component {
 
     return(
       <div>
-        <div className="small-12 medium-12 large-5 column journal-hikes-list">
+        <div className="small-12 medium-12 large-5 column hikes-list">
           <h3>My Hikes</h3>
           {hikes}
         </div>
-        <div className="small-12 medium-12 large-7 column journal-notes-list">
+        <div className="small-12 medium-12 large-7 column notes-list">
           <NotesContainer selectedHike={this.state.id} changeSelectedHike={this.handleOpenHike} />
         </div>
       </div>

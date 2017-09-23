@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :notes, only: [:index, :create, :update, :destroy]
       get "/notes/:hike_id", to:"notes#index"
+      patch "/notes/:note_id", to:"notes#update"
     end
   end
 

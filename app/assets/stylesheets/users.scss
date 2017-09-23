@@ -7,7 +7,16 @@
   width: 30%;
   margin-left: 35%;
   text-align: center;
-  border: solid 10px #0a2013;
+  padding: 50px;
   border-radius: 10px;
-  background: #0a2013;
+  background-color: black;
+  opacity: .7;
+}
+
+.login label {
+  color: white;
+}
+
+.login input {
+  color: black;
 }

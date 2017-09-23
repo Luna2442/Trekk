@@ -1,10 +1,9 @@
 import React from 'react';
+import UpdateNoteForm from './UpdateNoteForm';
 
 const NoteTile = props => {
 
   let deleteNote = () => {
-
-    let path = location.pathname
     fetch(`/api/v1/notes/${props.id}`, {
       credentials: 'same-origin',
       method: 'DELETE'
@@ -21,9 +20,13 @@ const NoteTile = props => {
       <h5>{formattedTime}</h5>
       <p>{props.body}</p>
 
+      <UpdateNoteForm id={props.id} aggregateNotes={props.aggregateNotes}/>
+
+      <input type='button update-button' className="button" defaultValue='Update this note' />
       <input type='button delete-button' className="button" defaultValue='Delete this note' onClick={deleteNote} />
     </div>
   )
 }
+
 
 export default NoteTile;

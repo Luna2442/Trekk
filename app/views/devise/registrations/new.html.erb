@@ -1,5 +1,8 @@
 
 <div class=login>
+  <p class="notice"><%= flash[:notice] %></p>
+  <p class="alert"><%= flash[:alert] %></p>
+
   <h2>Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

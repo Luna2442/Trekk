@@ -28,4 +28,14 @@ class Api::V1::NotesController < ApplicationController
     noteToDelete.delete
   end
 
+  def update
+    data = JSON.parse(request.body.read)
+    note = Note.find(params[:id])
+
+    note.update(
+      header: data["header"],
+      body: data["body"]
+    )
+  end
+
 end
