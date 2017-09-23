@@ -23,4 +23,9 @@ class Api::V1::NotesController < ApplicationController
     render json: new_note
   end
 
+  def destroy
+    noteToDelete = Note.find(params[:id])
+    noteToDelete.delete
+  end
+
 end

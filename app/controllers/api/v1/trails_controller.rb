@@ -4,7 +4,7 @@ class Api::V1::TrailsController < ApplicationController
   def index
     search = params[:search]
 
-    response = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{search}+hiking+trails&key=AIzaSyB5KSiNWNW318XVycsRXfNYFjZNyz4IOa0")
+    response = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{search}+hiking+trails&key=#{ENV['GOOGLE_MAPS_API_KEY']}")
 
     render json: response
   end

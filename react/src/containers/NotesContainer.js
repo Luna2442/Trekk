@@ -5,7 +5,6 @@ class NotesContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      id: null,
       notes: [],
       header: '',
       body: ''
@@ -30,8 +29,11 @@ class NotesContainer extends Component {
       })}.bind(this), 100)
   }
 
-  componentWillReceiveProps(){
-    this.aggregateNotes();
+  handleItemChange(event){
+    event.preventDefault();
+    let stateName = event.target.name
+    let value = event.target.value
+    this.setState({[stateName]: value})
   }
 
   addNote(event){
@@ -41,42 +43,51 @@ class NotesContainer extends Component {
       header: this.state.header,
       body: this.state.body,
     }
-
     fetch(`/api/v1/notes/`, {
       credentials: 'same-origin',
       method: 'POST',
       body: JSON.stringify(notePayload)
     })
-
+    this.setState({
+      header: '',
+      body: ''
+    })
     this.aggregateNotes();
   }
 
-  handleItemChange(event){
-    event.preventDefault();
-    let stateName = event.target.name
-    let value = event.target.value
-    this.setState({[stateName]: value})
+  componentDidMount(){
+    if(this.props.selectedHike != null){
+      fetch(`/api/v1/notes/${this.props.selectedHike}`, {
+        credentials: 'same-origin'
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          let errorMessage = `${response.status} ${response.statusText}`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(body => {
+        this.setState({
+          notes: body
+        })
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+    }
   }
 
-  componentDidMount(){
-    fetch(`/api/v1/notes/${this.props.selectedHike}`, {
-      credentials: 'same-origin'
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        let errorMessage = `${response.status} ${response.statusText}`,
-            error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(body => {
-      this.setState({
-        notes: body
-      })
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  componentWillReceiveProps(){
+    if(this.props.selectedHike != null && this.state.notes != []){
+      setTimeout(() => {
+        this.setState({
+          notes: []
+        })
+      }, 100)
+    } else {
+      this.aggregateNotes();
+    }
   }
 
   render() {
@@ -88,23 +99,29 @@ class NotesContainer extends Component {
           key = {note.id}
           id = {note.id}
           header = {note.header}
+          time = {note.created_at}
           body = {note.body}
+          aggregateNotes={this.aggregateNotes}
         />
       )
     })
 
     return(
       <div className="notes-container">
-        {notes}
-        <div>
+        <div className="note-form">
           <form onSubmit={this.addNote}>
+            <h5>New Entry</h5>
             <label htmlFor="header"></label>
             <input name="header" placeholder="Header" value={this.state.header} onChange={this.handleItemChange}/>
             <label htmlFor="body"></label>
-            <input name="body" placeholder="Body" value={this.state.body} onChange={this.handleItemChange}/>
-            <br/><br/>
+            <textarea name="body" placeholder="Body" value={this.state.body} onChange={this.handleItemChange}/>
+            <br/>
             <input type="submit" value="Add Note" className="button" />
+            <hr/>
           </form>
+        </div>
+        <div className="note-scroller">
+          {notes}
         </div>
       </div>
     )

@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 var config = {
   entry: {
 		path: __dirname + '/src/main.js',
@@ -20,7 +22,6 @@ var config = {
 
 if (process.env.NODE_ENV === 'production') {
   delete config.devtool;
-  var webpack = require('webpack');
   config.plugins = [
     new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
   ];

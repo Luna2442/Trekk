@@ -27,7 +27,7 @@ const HikeTile = props => {
 
   return(
     <div>
-      <div className="trail-list" onClick={props.handleClick}>
+      <div className="hike" onClick={props.handleClick}>
         <h4>{props.name}</h4>
         <p>{props.rating}</p>
         <p>{props.address}</p>
