@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Modal from 'react-modal';
 import UpdateNoteForm from './UpdateNoteForm';
 
-const customStyles = {
+let customStyles = {
   overlay : {
     position          : 'fixed',
     top               : 100,

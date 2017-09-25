@@ -32,6 +32,14 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :photos, only: [:index, :create]
+      get "/photos/:hike_id", to:"photos#index"
+      post "/photos/:hike_id", to:"photos#create"
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
       resources :hikes, only: [:create, :index]
     end
   end
