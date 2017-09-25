@@ -13,11 +13,9 @@ class Api::V1::PhotosController < ApplicationController
     data = JSON.parse(request.body.read)
     selectedHike = Hike.find(params[:hike_id])
 
-    binding.pry
-
-    new_photo = Photo.create!(
+    new_photo = Photo.create(
       hike: selectedHike,
-      image: data["image"],
+      image: data["photo"]
     )
 
     render json: new_photo

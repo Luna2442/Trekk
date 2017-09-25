@@ -74,6 +74,23 @@ class HikeTile extends Component {
       })}.bind(this), 100)
   }
 
+  componentDidMount(){
+    setTimeout(function(){
+      fetch(`/api/v1/photos/${this.props.id}`, {
+        credentials: 'same-origin'
+      })
+      .then(response => {
+        return response.json();
+      })
+      .then(body => {
+        if(body[0] != undefined){
+          this.setState({
+            photos: body
+          })
+        }
+      })}.bind(this), 100)
+  }
+
   render() {
 
     let geography;
@@ -92,7 +109,7 @@ class HikeTile extends Component {
       deleteButton = <input type='button' className="button delete-button" defaultValue='Remove this hike' onClick={this.deleteHike} />
       uploadButton = <input type='button' className="button" defaultValue='Add a photo' onClick={this.openModal} />
       photos = this.state.photos.map((photo) => {
-        <img src={photo.image} />
+        return <img key={photo.id} src={photo.image} ></img>
       })
     }
 
@@ -106,8 +123,8 @@ class HikeTile extends Component {
         </div>
         {deleteButton}
         {uploadButton}
-        <hr/>
         {photos}
+        <hr/>
         <Modal
           isOpen={this.state.photoFormActive}
           onRequestClose={this.closeModal}
