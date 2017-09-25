@@ -78,13 +78,11 @@ class NotesContainer extends Component {
     }
   }
 
-  componentWillReceiveProps(){
-    if(this.props.selectedHike != null && this.state.notes != []){
-      setTimeout(() => {
-        this.setState({
-          notes: []
-        })
-      }, 100)
+  componentWillReceiveProps(nextProps){
+    if(this.props.selectedHike != null && nextProps.selectedHike == null){
+      this.setState({
+        notes: []
+      })
     } else {
       this.aggregateNotes();
     }
