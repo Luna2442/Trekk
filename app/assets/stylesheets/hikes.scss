@@ -16,16 +16,24 @@
 
 .delete-button {
   bottom: 0;
+  float: right;
+}
+
+.delete-button:focus, .delete-button:hover {
+  background: red;
 }
 
 .notes-list {
+  width: 57%;
+  margin-right: 15px;
+  border-radius: 10px;
   background-color: black;
   opacity: .7;
 }
 
 .note-scroller {
   overflow-y: scroll;
-  height:330px;
+  height:353px;
 }
 
 .note-form {
@@ -58,4 +66,9 @@
 .note-tile {
   color: white;
   padding: 3%;
+}
+
+.edit-note {
+  background: black;
+  opacity: .7;
 }
