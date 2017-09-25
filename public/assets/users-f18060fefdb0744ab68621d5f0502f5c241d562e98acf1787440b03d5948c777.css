@@ -1,0 +1,21 @@
+/* line 5, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
+.login {
+  color: white;
+  width: 30%;
+  margin-left: 35%;
+  text-align: center;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: .7;
+}
+
+/* line 16, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
+.login label {
+  color: white;
+}
+
+/* line 20, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
+.login input {
+  color: black;
+}

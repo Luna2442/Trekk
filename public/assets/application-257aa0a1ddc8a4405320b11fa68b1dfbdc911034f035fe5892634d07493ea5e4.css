@@ -1,0 +1,233 @@
+/* line 5, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.hikes-list {
+  color: white;
+  overflow-y: scroll;
+  height: 600px;
+  background: black;
+  border-radius: 10px;
+  padding: 25px;
+  margin-left: 15px;
+  width: 40%;
+  opacity: .7;
+}
+
+/* line 17, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.delete-button {
+  bottom: 0;
+  float: right;
+}
+
+/* line 22, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.delete-button:focus, .delete-button:hover {
+  background: red;
+}
+
+/* line 26, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.notes-list {
+  width: 57%;
+  margin-right: 15px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: .7;
+}
+
+/* line 34, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-scroller {
+  overflow-y: scroll;
+  height: 353px;
+}
+
+/* line 39, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-form {
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 45, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-form h5 {
+  text-align: center;
+  color: white;
+}
+
+/* line 50, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-form input {
+  width: 80%;
+  height: 10%;
+}
+
+/* line 55, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-form textarea {
+  margin: auto;
+  width: 80%;
+  height: 10vh;
+}
+
+/* line 61, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-form .button {
+  width: 25%;
+  height: 10%;
+}
+
+/* line 66, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-tile {
+  color: white;
+  padding: 3%;
+}
+
+/* line 71, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.edit-note {
+  background: black;
+  opacity: .7;
+}
+/* line 1, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/navbar.scss */
+.topnav {
+  background-color: #0a2013;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+/* line 7, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/navbar.scss */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+/* Change the color of links on hover */
+/* line 18, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/navbar.scss */
+.topnav a:hover {
+  background-color: #f7bd0e;
+  color: white;
+}
+
+/* Add a color to the active/current link */
+/* line 24, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/navbar.scss */
+.topnav a.active {
+  background-color: #f7bd0e;
+  color: white;
+}
+
+/* line 29, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/navbar.scss */
+.username {
+  color: white;
+  float: right;
+  margin: 20px;
+}
+
+/* line 35, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/navbar.scss */
+.signin {
+  color: white;
+  float: right;
+}
+
+/* line 40, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/navbar.scss */
+.navigation {
+  float: left;
+}
+/* line 5, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.trail-list {
+  float: left;
+  text-align: left;
+  color: white;
+}
+
+/* line 11, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.row {
+  max-width: none;
+}
+
+/* line 15, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.trail-search-list {
+  overflow-y: scroll;
+  height: 600px;
+  border-radius: 10px;
+  padding: 25px;
+  margin-right: 15px;
+  width: 57%;
+  background-color: black;
+  opacity: .7;
+}
+
+/* line 26, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.addTrailButton {
+  float: right;
+  padding: 10px;
+}
+
+/* line 31, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.addTrailButton a:hover {
+  background-color: #3a949d;
+  color: white;
+}
+
+/* line 36, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.map {
+  border: solid 10px black;
+  background: black;
+  border-radius: 10px;
+}
+/* line 5, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
+.login {
+  color: white;
+  width: 30%;
+  margin-left: 35%;
+  text-align: center;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: .7;
+}
+
+/* line 16, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
+.login label {
+  color: white;
+}
+
+/* line 20, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
+.login input {
+  color: black;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+ h4 {
+   color: white;
+   text-decoration: underline;
+ }
+
+ body {
+   background: url(background2.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+ }
+
+.button {
+  background: #f7bd0e;
+  border-radius: 15px;
+  padding: 10px;
+  color: #414743;
+}
+
+.button:focus, .button:hover {
+  background-color: #1ea1b8;
+}

@@ -1,0 +1,42 @@
+/* line 5, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.trail-list {
+  float: left;
+  text-align: left;
+  color: white;
+}
+
+/* line 11, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.row {
+  max-width: none;
+}
+
+/* line 15, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.trail-search-list {
+  overflow-y: scroll;
+  height: 600px;
+  border-radius: 10px;
+  padding: 25px;
+  margin-right: 15px;
+  width: 57%;
+  background-color: black;
+  opacity: .7;
+}
+
+/* line 26, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.addTrailButton {
+  float: right;
+  padding: 10px;
+}
+
+/* line 31, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.addTrailButton a:hover {
+  background-color: #3a949d;
+  color: white;
+}
+
+/* line 36, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+.map {
+  border: solid 10px black;
+  background: black;
+  border-radius: 10px;
+}
