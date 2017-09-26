@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
 import UploadPhotoForm from './UploadPhotoForm';
-import Gallery from 'react-photo-gallery';
+import Gallery from 'react-grid-gallery';
 
 let customStyles = {
   overlay : {
@@ -112,21 +112,18 @@ class HikeTile extends Component {
       </div>
       deleteButton = <input type='button' className="button delete-button" defaultValue='Remove this hike' onClick={this.deleteHike} />
       uploadButton = <input type='button' className="button" defaultValue='Add a photo' onClick={this.openModal} />
-      photos = this.state.photos.map((photo, index) => {
-        return(
-          {
-            src: `${photo.image}`,
-            sizes:[
-              '(min-width: 480px) 50vw',
-              '(min-width: 1024px) 33.3vw',
-              '100vw'
-            ],
-            width: 100,
-            height: 100,
-            alt: `image ${photo.id}`
-          }
-        )
+
+      photos = this.state.photos.map((photo) => {
+        return (
+        {
+          src: `${photo.image}`,
+          thumbnail: `${photo.image}`,
+          thumbnailWidth: 82,
+          thumbnailHeight: 80
+        })
+
       })
+
     }
 
     return(
@@ -139,7 +136,7 @@ class HikeTile extends Component {
         </div>
         {deleteButton}
         {uploadButton}
-        <Gallery photos={photos} />
+        <Gallery images={photos} backdropClosesModal={true} rowHeight='125'/>
         <hr/>
         <Modal
           isOpen={this.state.photoFormActive}
