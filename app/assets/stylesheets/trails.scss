@@ -19,8 +19,7 @@
   padding: 25px;
   margin-right: 15px;
   width: 57%;
-  background-color: black;
-  opacity: .7;
+  background: rgba(0, 0, 0, .7);
 }
 
 .addTrailButton {
@@ -34,7 +33,7 @@
 }
 
 .map {
-  border: solid 10px black;
-  background: black;
+  border: solid 10px rgba(0, 0, 0, .7);
+  background: rgba(0, 0, 0, .7);
   border-radius: 10px;
 }

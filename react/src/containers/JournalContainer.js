@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import HikeTile from '../components/HikeTile';
 import NotesContainer from './NotesContainer';
-import Collapsible from 'react-collapsible';
 
 class JournalContainer extends Component {
   constructor(props){

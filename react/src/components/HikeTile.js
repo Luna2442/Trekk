@@ -96,6 +96,7 @@ class HikeTile extends Component {
 
   render() {
 
+
     let geography;
     let deleteButton;
     let uploadButton;
@@ -120,19 +121,18 @@ class HikeTile extends Component {
               '(min-width: 1024px) 33.3vw',
               '100vw'
             ],
-            width: 600,
-            height: 600,
+            width: 100,
+            height: 100,
             alt: `image ${photo.id}`
           }
         )
       })
-
     }
 
     return(
       <div>
-        <div className="hike" onClick={this.props.handleClick}>
-          <h4>{this.props.name}</h4>
+        <div className="hike" >
+          <h4 onClick={this.props.handleClick}>{this.props.name}</h4>
           <p>{this.props.rating}</p>
           <p>{this.props.address}</p>
           {geography}
@@ -149,6 +149,7 @@ class HikeTile extends Component {
         >
           <UploadPhotoForm hikeId={this.props.id} closeModal={this.closeModal} aggregatePhotos={this.aggregatePhotos}/>
         </Modal>
+
       </div>
     )
   }
