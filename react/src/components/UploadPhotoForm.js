@@ -41,9 +41,9 @@ class UploadPhotoForm extends Component {
   render() {
     return(
       <form onSubmit={this.submitPhoto}>
-        <img src="" height="200"/>
         <input type="file" name="file" ref="file" defaultValue={this.state.file} onChange={this.handleFileChange} /><br />
-        <input type="submit" />
+        <input type="submit" className="button"/>
+        <button type="submit" value="Cancel" className="button delete-button" onClick={this.props.closeModal} style={{float:'right'}}>Cancel</button>
       </form>
     )
   }

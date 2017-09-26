@@ -28,6 +28,7 @@
     "react-dom": "^15.6.1",
     "react-images-upload": "^1.1.1",
     "react-modal": "^2.3.2",
+    "react-photo-gallery": "^6.0.3",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-tools": "^0.13.3",

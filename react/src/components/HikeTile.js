@@ -1,24 +1,27 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
 import UploadPhotoForm from './UploadPhotoForm';
+import Gallery from 'react-photo-gallery';
 
 let customStyles = {
   overlay : {
     position          : 'fixed',
-    top               : 100,
+    margin            : 'auto',
+    top               : 200,
     left              : 400,
     right             : 400,
-    bottom            : 100,
+    bottom            : 325,
     backgroundColor   : 'black',
+    borderRadius      : 15,
     opacity           : 0.9
   },
   content : {
     color                      : 'white',
     position                   : 'absolute',
-    top                        : '40px',
-    left                       : '40px',
-    right                      : '40px',
-    bottom                     : '40px',
+    top                        : '20px',
+    left                       : '20px',
+    right                      : '20px',
+    bottom                     : '20px',
     border                     : '1px solid #ccc',
     background                 : 'black',
     overflow                   : 'auto',
@@ -71,7 +74,7 @@ class HikeTile extends Component {
         this.setState({
           photos: body
         })
-      })}.bind(this), 100)
+      })}.bind(this), 1000)
   }
 
   componentDidMount(){
@@ -96,7 +99,7 @@ class HikeTile extends Component {
     let geography;
     let deleteButton;
     let uploadButton;
-    let photos;
+    let photos = [];
     if(this.props.latitude && this.props.longitude){
       geography =
       <div>
@@ -108,9 +111,22 @@ class HikeTile extends Component {
       </div>
       deleteButton = <input type='button' className="button delete-button" defaultValue='Remove this hike' onClick={this.deleteHike} />
       uploadButton = <input type='button' className="button" defaultValue='Add a photo' onClick={this.openModal} />
-      photos = this.state.photos.map((photo) => {
-        return <img key={photo.id} src={photo.image} ></img>
+      photos = this.state.photos.map((photo, index) => {
+        return(
+          {
+            src: `${photo.image}`,
+            sizes:[
+              '(min-width: 480px) 50vw',
+              '(min-width: 1024px) 33.3vw',
+              '100vw'
+            ],
+            width: 600,
+            height: 600,
+            alt: `image ${photo.id}`
+          }
+        )
       })
+
     }
 
     return(
@@ -123,7 +139,7 @@ class HikeTile extends Component {
         </div>
         {deleteButton}
         {uploadButton}
-        {photos}
+        <Gallery photos={photos} />
         <hr/>
         <Modal
           isOpen={this.state.photoFormActive}
