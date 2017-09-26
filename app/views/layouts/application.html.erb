@@ -13,19 +13,18 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <nav class="topnav" id="myTopnav">
+    <% if user_signed_in? %>
+      <div class=navigation><%= link_to "Journal", "/users/me" %></div>
+      <div class=navigation><%= link_to "Find Trails", "/trails" %></div>
+      <div class=username>Signed in as <%= current_user.email %></div>
+      <div class=signin><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
+      <div class=signin><%= link_to "Edit Account", edit_user_registration_path %></div>
+    <%end%>
+  </nav>
+
   <body>
-
-    <nav class="topnav" id="myTopnav">
-      <% if user_signed_in? %>
-        <div class=navigation><%= link_to "Journal", "/users/me" %></div>
-        <div class=navigation><%= link_to "Find Trails", "/trails" %></div>
-        <div class=username>Signed in as <%= current_user.email %></div>
-        <div class=signin><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
-      <%end%>
-    </nav>
-
-    <p class="notice"><%= flash[:notice] %></p>
-    <p class="alert"><%= flash[:alert] %></p>
+    </br>
     <div class="row">
       <%= yield %>
     </div>

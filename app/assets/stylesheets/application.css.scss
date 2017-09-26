@@ -20,7 +20,7 @@
  }
 
  body {
-   background: asset_url('background2.jpg');
+   background: asset_url('background2.jpg') no-repeat center center fixed;
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
