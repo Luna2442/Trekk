@@ -14,9 +14,18 @@
  *= require_self
  */
 
+ h3 {
+   font-family: 'Saira Condensed', sans-serif;
+ }
+
  h4 {
    color: white;
    text-decoration: underline;
+   font-family: 'Saira Condensed', sans-serif;
+ }
+
+ h5 {
+   font-family: 'Saira Condensed', sans-serif;
  }
 
  body {
@@ -24,6 +33,7 @@
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
+   font-family: 'Saira Condensed', sans-serif;
  }
 
 .button {
@@ -31,6 +41,7 @@
   border-radius: 15px;
   padding: 10px;
   color: #414743;
+  font-family: 'Saira Condensed', sans-serif;
 }
 
 .button:focus, .button:hover {

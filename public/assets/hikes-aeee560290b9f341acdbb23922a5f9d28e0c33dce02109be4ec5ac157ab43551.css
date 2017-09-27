@@ -1,0 +1,80 @@
+/* line 5, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.hikes-list {
+  color: white;
+  overflow-y: scroll;
+  height: 600px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 25px;
+  margin-left: 15px;
+  width: 40%;
+}
+
+/* line 16, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.delete-button {
+  bottom: 0;
+  float: right;
+}
+
+/* line 21, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.delete-button:focus, .delete-button:hover {
+  background: red;
+}
+
+/* line 25, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.notes-list {
+  width: 57%;
+  margin-right: 15px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* line 32, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-scroller {
+  overflow-y: scroll;
+  height: 353px;
+}
+
+/* line 37, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-form {
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 43, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-form h5 {
+  text-align: center;
+  color: white;
+}
+
+/* line 48, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-form input {
+  width: 80%;
+  height: 10%;
+}
+
+/* line 53, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-form textarea {
+  margin: auto;
+  width: 80%;
+  height: 10vh;
+}
+
+/* line 59, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-form .button {
+  width: 25%;
+  height: 10%;
+}
+
+/* line 64, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.note-tile {
+  color: white;
+  padding: 3%;
+}
+
+/* line 69, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+.edit-note {
+  background: black;
+  opacity: .7;
+}

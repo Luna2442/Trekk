@@ -18,25 +18,24 @@
   padding: 25px;
   margin-right: 15px;
   width: 57%;
-  background-color: black;
-  opacity: .7;
+  background: rgba(0, 0, 0, 0.7);
 }
 
-/* line 26, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+/* line 25, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
 .addTrailButton {
   float: right;
   padding: 10px;
 }
 
-/* line 31, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+/* line 30, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
 .addTrailButton a:hover {
   background-color: #3a949d;
   color: white;
 }
 
-/* line 36, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+/* line 35, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
 .map {
-  border: solid 10px black;
-  background: black;
+  border: solid 10px rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
 }

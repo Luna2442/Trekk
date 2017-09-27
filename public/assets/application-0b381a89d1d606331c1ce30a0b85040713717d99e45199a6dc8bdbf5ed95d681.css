@@ -3,79 +3,77 @@
   color: white;
   overflow-y: scroll;
   height: 600px;
-  background: black;
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   padding: 25px;
   margin-left: 15px;
   width: 40%;
-  opacity: .7;
 }
 
-/* line 17, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 16, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .delete-button {
   bottom: 0;
   float: right;
 }
 
-/* line 22, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 21, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .delete-button:focus, .delete-button:hover {
   background: red;
 }
 
-/* line 26, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 25, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .notes-list {
   width: 57%;
   margin-right: 15px;
   border-radius: 10px;
-  background-color: black;
-  opacity: .7;
+  background: rgba(0, 0, 0, 0.7);
 }
 
-/* line 34, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 32, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .note-scroller {
   overflow-y: scroll;
   height: 353px;
 }
 
-/* line 39, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 37, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .note-form {
   text-align: center;
   border-radius: 15px;
   margin-bottom: 15px;
 }
 
-/* line 45, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 43, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .note-form h5 {
   text-align: center;
   color: white;
 }
 
-/* line 50, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 48, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .note-form input {
   width: 80%;
   height: 10%;
 }
 
-/* line 55, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 53, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .note-form textarea {
   margin: auto;
   width: 80%;
   height: 10vh;
 }
 
-/* line 61, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 59, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .note-form .button {
   width: 25%;
   height: 10%;
 }
 
-/* line 66, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 64, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .note-tile {
   color: white;
   padding: 3%;
 }
 
-/* line 71, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
+/* line 69, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/hikes.scss */
 .edit-note {
   background: black;
   opacity: .7;
@@ -149,26 +147,25 @@
   padding: 25px;
   margin-right: 15px;
   width: 57%;
-  background-color: black;
-  opacity: .7;
+  background: rgba(0, 0, 0, 0.7);
 }
 
-/* line 26, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+/* line 25, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
 .addTrailButton {
   float: right;
   padding: 10px;
 }
 
-/* line 31, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+/* line 30, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
 .addTrailButton a:hover {
   background-color: #3a949d;
   color: white;
 }
 
-/* line 36, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
+/* line 35, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/trails.scss */
 .map {
-  border: solid 10px black;
-  background: black;
+  border: solid 10px rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
 }
 /* line 5, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
@@ -191,6 +188,31 @@
 /* line 20, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
 .login input {
   color: black;
+  text-align: center;
+}
+
+/* line 25, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
+.edit {
+  color: white;
+  width: 30%;
+  margin-left: 35%;
+  text-align: center;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: .7;
+  margin-bottom: 20px;
+}
+
+/* line 37, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
+.edit label {
+  color: white;
+}
+
+/* line 41, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/users.scss */
+.edit input {
+  color: black;
+  text-align: center;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -207,27 +229,42 @@
 
 
  */
+/* line 18, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/application.css.scss */
+h3 {
+  font-family: 'Saira Condensed', sans-serif;
+}
 
+/* line 22, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/application.css.scss */
+h4 {
+  color: white;
+  text-decoration: underline;
+  font-family: 'Saira Condensed', sans-serif;
+}
 
- h4 {
-   color: white;
-   text-decoration: underline;
- }
+/* line 28, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/application.css.scss */
+h5 {
+  font-family: 'Saira Condensed', sans-serif;
+}
 
- body {
-   background: url(background2.jpg);
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center center;
- }
+/* line 32, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/application.css.scss */
+body {
+  background: url(/assets/background2-d1ce4eac7c0948b0f762aea82b2fe276549aba287a90481105b7c2aaaa5251fc.jpg) no-repeat center center fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: 'Saira Condensed', sans-serif;
+}
 
+/* line 40, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/application.css.scss */
 .button {
   background: #f7bd0e;
   border-radius: 15px;
   padding: 10px;
   color: #414743;
+  font-family: 'Saira Condensed', sans-serif;
 }
 
+/* line 48, /Users/alexluna/Desktop/Dev/Trekk/app/assets/stylesheets/application.css.scss */
 .button:focus, .button:hover {
   background-color: #1ea1b8;
 }
