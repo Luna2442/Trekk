@@ -105,10 +105,10 @@ class HikeTile extends Component {
       geography =
       <div>
         <h5>Geography:</h5>
-        <ul>
+
           <li>Latitude: {this.props.latitude}</li>
           <li>Longitude: {this.props.longitude}</li>
-        </ul>
+
       </div>
       deleteButton = <input type='button' className="button delete-button" defaultValue='Remove this hike' onClick={this.deleteHike} />
       uploadButton = <input type='button' className="button" defaultValue='Add a photo' onClick={this.openModal} />
