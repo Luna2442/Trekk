@@ -9,6 +9,16 @@
 }
 
 .trail-search-list {
+  border: solid 2px black;
+  overflow-y: scroll;
+  height:85vh;
+  border-radius: 10px;
+  padding: 25px;
+  background: rgba(0, 0, 0, .7);
+}
+
+.search-container {
+  border: solid 2px black;
   overflow-y: scroll;
   height:85vh;
   border-radius: 10px;
@@ -17,13 +27,17 @@
 }
 
 .trail-search-form .text {
-  width: 50%;
+  width: 75%;
 }
 
 .add-trail-button {
   margin-top:40px;
   float: right;
   padding: 10px;
+}
+
+.search-button {
+  float: right;
 }
 
 .add-trail-button a:hover {

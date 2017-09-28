@@ -14,29 +14,28 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <% if user_signed_in? %>
-    <div class="wrapper">
-      <div class="logo"><%= image_tag 'logo(white).gif', size: '100x50' %></div>
-      <nav>
-        <ul class="navigation">
-          <li>
-            <div><%= link_to "Journal", "/users/me" %></div>
-          </li>
-          <li>
-            <div><%= link_to "Find Trails", "/trails" %></div>
-          </li>
-          <li>
-            <div class=signin><%= link_to "Edit Account", edit_user_registration_path %></div>
-          </li>
-          <li>
-            <div class=signin><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  <%end%>
-
   <body>
+    <% if user_signed_in? %>
+      <div class="wrapper">
+        <div class="logo"><%= image_tag 'logo(white).gif', size: '100x50' %></div>
+        <nav>
+          <ul class="navigation">
+            <li>
+              <div><%= link_to "Journal", "/users/me" %></div>
+            </li>
+            <li>
+              <div><%= link_to "Find Trails", "/trails" %></div>
+            </li>
+            <li>
+              <div class=signin><%= link_to "Edit Account", edit_user_registration_path %></div>
+            </li>
+            <li>
+              <div class=signin><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    <%end%>
     </br>
     <%= yield %>
   </body>

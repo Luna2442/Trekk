@@ -72,14 +72,16 @@ class TrailSearchContainer extends Component {
       <Grid>
         <Row>
           <Col sm={12} lg={6}>
-            <form onSubmit={this.searchTrails} className="trail-search-form">
-              <label htmlFor="search"></label>
-              <input className="text" name="search" placeholder="Search" value={this.state.search} onChange={this.handleItemChange}/>
-              <br/><br/>
-              <input type="submit" value="List Results" className="button" />
-            </form>
-            <div className="map">
-              {map}
+            <div className="search-container">
+              <form onSubmit={this.searchTrails} className="trail-search-form">
+                <label htmlFor="search"></label>
+                <input className="text" name="search" placeholder="Search" value={this.state.search} onChange={this.handleItemChange}/>
+                <input className="search-button button" type="submit" value="List Results"/>
+              </form>
+              <br/>
+              <div className="map">
+                {map}
+              </div>
             </div>
           </Col>
 

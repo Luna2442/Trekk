@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .hikes-list {
+  border: solid 2px black;
   color: white;
   overflow-y: scroll;
   height:85vh;
@@ -39,6 +40,7 @@
 }
 
 .notes-list {
+  border: solid 2px black;
   height: 85vh;
   border-radius: 10px;
   background: rgba(0, 0, 0, .7);
