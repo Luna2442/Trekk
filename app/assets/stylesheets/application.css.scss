@@ -30,13 +30,13 @@
 
  body {
    background: asset_url('background2.jpg') no-repeat center center fixed;
-   background-attachment: fixed;
-   background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
-   width: 100%;
-   height: 100%;
    font-family: 'Saira Condensed', sans-serif;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
  }
 
 .button {
