@@ -14,37 +14,27 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-<% if user_signed_in? %>
-  <div class="wrapper">
-    <div class="logo"><%= image_tag 'logo(white).gif', size: '100x50' %></div>
-    <nav>
-      <ul class="navigation">
-        <li>
-          <div><%= link_to "Journal", "/users/me" %></div>
-        </li>
-        <li>
-          <div><%= link_to "Find Trails", "/trails" %></div>
-        </li>
-        <li>
-          <div class=signin><%= link_to "Edit Account", edit_user_registration_path %></div>
-        </li>
-        <li>
-          <div class=signin><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
-        </li>
-      </ul>
-    </nav>
-  </div>
-<%end%>
-
-  <!-- <nav class="topnav" id="myTopnav">
-    <% if user_signed_in? %>
-      <div class=navigation><%= link_to "Journal", "/users/me" %></div>
-      <div class=navigation><%= link_to "Find Trails", "/trails" %></div>
-      <div class=username>Signed in as <%= current_user.email %></div>
-      <div class=signin><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
-      <div class=signin><%= link_to "Edit Account", edit_user_registration_path %></div>
-    <%end%>
-  </nav> -->
+  <% if user_signed_in? %>
+    <div class="wrapper">
+      <div class="logo"><%= image_tag 'logo(white).gif', size: '100x50' %></div>
+      <nav>
+        <ul class="navigation">
+          <li>
+            <div><%= link_to "Journal", "/users/me" %></div>
+          </li>
+          <li>
+            <div><%= link_to "Find Trails", "/trails" %></div>
+          </li>
+          <li>
+            <div class=signin><%= link_to "Edit Account", edit_user_registration_path %></div>
+          </li>
+          <li>
+            <div class=signin><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  <%end%>
 
   <body>
     </br>
