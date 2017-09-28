@@ -39,24 +39,29 @@ class UpdateNoteForm extends Component {
       <form onSubmit={this.updateNote}>
         <h3>Edit Note</h3>
         <label htmlFor="header" style={{color:'white'}}>Header</label>
+        <br/>
         <input type="text" name="header" value={this.state.header} onChange={this.handleItemChange}
           style={{
+            color: 'black',
             margin: 'auto',
-            width: '80%'
+            width: '100%'
           }}
-        />
-
-        <label htmlFor="body" style={{color:'white'}}>Body</label>
-        <textArea type="text" name="body" value={this.state.body} onChange={this.handleItemChange}
-          style={{
-            margin: 'auto',
-            width: '80%',
-            height: '22vh'}}
         />
         <br/>
 
+        <label htmlFor="body" style={{color:'white'}}>Body</label>
+        <br/>
+        <textArea type="text" name="body" value={this.state.body} onChange={this.handleItemChange}
+          style={{
+            color: 'black',
+            margin: 'auto',
+            width: '100%',
+            height: '22vh'}}
+        />
+        <br/><br/>
+
         <input type="submit" value="Update" className="button" />
-        <button type="submit" value="Cancel" className="button" onClick={this.props.closeModal} style={{float:'right'}}>Cancel</button>
+        <input type="submit" value="Cancel" className="button" onClick={this.props.closeModal} style={{float:'right'}}/>
       </form>
     )
   }

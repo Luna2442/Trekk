@@ -40,9 +40,7 @@ class TrailSearchTile extends Component {
         </Col>
 
         <Col sm={4} lg={4}>
-          <div className="add-trail-button button">
-            <button onClick={this.addToHikes}>Add To Hike</button>
-          </div>
+          <input type="button" className=" add-trail-button button" value="Add Hike" onClick={this.addToHikes}/>
         </Col>
       </Row>
     )

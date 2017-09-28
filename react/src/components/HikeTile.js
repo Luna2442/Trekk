@@ -138,7 +138,7 @@ class HikeTile extends Component {
           {deleteButton}
           {uploadButton}
           <div className="photos">
-            <Gallery images={photos} backdropClosesModal={true} rowHeight='100'/>
+            <Gallery images={photos} backdropClosesModal={true} rowHeight={100}/>
           </div>
         </div>
         <Modal

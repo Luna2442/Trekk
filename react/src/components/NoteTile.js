@@ -8,7 +8,7 @@ let customStyles = {
     top               : 100,
     left              : 400,
     right             : 400,
-    bottom            : 100,
+    bottom            : 160,
     backgroundColor   : 'black',
     borderRadius      : 15,
     opacity           : 0.9
