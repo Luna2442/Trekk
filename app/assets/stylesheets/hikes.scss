@@ -9,8 +9,14 @@
   background: rgba(0, 0, 0, .7);
   border-radius: 10px;
   padding: 25px;
-  margin-left: 15px;
-  width: 40%;
+}
+
+.photos {
+  margin-top: 2%;
+}
+
+.hike {
+  margin-top: 2%;
 }
 
 .delete-button {
@@ -23,10 +29,10 @@
 }
 
 .notes-list {
-  width: 57%;
-  margin-right: 15px;
+  height:600px;
   border-radius: 10px;
   background: rgba(0, 0, 0, .7);
+  float: right;
 }
 
 .note-scroller {

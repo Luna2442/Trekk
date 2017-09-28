@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Grid, Row, Col, Well} from 'react-bootstrap';
 
 class TrailSearchTile extends Component {
   constructor(props){
@@ -29,20 +30,21 @@ class TrailSearchTile extends Component {
 
   render() {
     return(
-      <div>
+      <Row>
+        <Col sm={8} lg={8}>
+          <div className="trail-list" onClick={this.props.handleClick}>
+            <h4>{this.props.name}</h4>
+            <p>{this.props.address}</p>
+            <p>Rating: {this.props.rating}</p>
+          </div>
+        </Col>
 
-        <div className="trail-list" onClick={this.props.handleClick}>
-          <h4>{this.props.name}</h4>
-          <p>{this.props.address}</p>
-          <p>Rating: {this.props.rating}</p>
-        </div>
-
-        <div className="addTrailButton button">
-          <button onClick={this.addToHikes}>Add to hikes</button>
-        </div>
-
-        <hr/>
-      </div>
+        <Col sm={4} lg={4}>
+          <div className="add-trail-button button">
+            <button onClick={this.addToHikes}>Add To Hike</button>
+          </div>
+        </Col>
+      </Row>
     )
   }
 }

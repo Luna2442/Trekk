@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Modal from 'react-modal';
 import UploadPhotoForm from './UploadPhotoForm';
 import Gallery from 'react-grid-gallery';
+import {Grid, Row, Col, Well} from 'react-bootstrap';
 
 let customStyles = {
   overlay : {
@@ -127,17 +128,19 @@ class HikeTile extends Component {
     }
 
     return(
-      <div>
+      <Col sm={12} lg={12}>
         <div className="hike" >
           <h4 onClick={this.props.handleClick}>{this.props.name}</h4>
           <p>{this.props.rating}</p>
           <p>{this.props.address}</p>
           {geography}
+          <br/>
+          {deleteButton}
+          {uploadButton}
+          <div className="photos">
+            <Gallery images={photos} backdropClosesModal={true} rowHeight='100'/>
+          </div>
         </div>
-        {deleteButton}
-        {uploadButton}
-        <Gallery images={photos} backdropClosesModal={true} rowHeight='125'/>
-        <hr/>
         <Modal
           isOpen={this.state.photoFormActive}
           onRequestClose={this.closeModal}
@@ -147,7 +150,7 @@ class HikeTile extends Component {
           <UploadPhotoForm hikeId={this.props.id} closeModal={this.closeModal} aggregatePhotos={this.aggregatePhotos}/>
         </Modal>
 
-      </div>
+      </Col>
     )
   }
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import HikeTile from '../components/HikeTile';
 import NotesContainer from './NotesContainer';
+import {Grid, Row, Col, Well} from 'react-bootstrap';
 
 class JournalContainer extends Component {
   constructor(props){
@@ -99,15 +100,17 @@ class JournalContainer extends Component {
     })
 
     return(
-      <div>
-        <div className="small-12 medium-12 large-5 column hikes-list">
-          <h3>My Hikes</h3>
-          {hikes}
-        </div>
-        <div className="small-12 medium-12 large-7 column notes-list">
-          <NotesContainer selectedHike={this.state.id} changeSelectedHike={this.handleOpenHike} />
-        </div>
-      </div>
+      <Grid>
+        <Row>
+          <Col sm={12} lg={4} className="hikes-list">
+            <h3>My Hikes</h3>
+            {hikes}
+          </Col>
+          <Col sm={12} lg={7} className="notes-list">
+            <NotesContainer selectedHike={this.state.id} changeSelectedHike={this.handleOpenHike} />
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 }

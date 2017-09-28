@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import TrailSearchTile from '../components/TrailSearchTile';
+import {Grid, Row, Col, Well} from 'react-bootstrap';
 
 class TrailSearchContainer extends Component {
   constructor(props){
@@ -47,12 +48,8 @@ class TrailSearchContainer extends Component {
 
   render() {
 
-    let mapStyle = {
-      border:0
-    }
-
     let map = <iframe
-                width="550" height="473" frameBorder="0" style={mapStyle}
+                frameBorder="0"
                 src={`https://www.google.com/maps/embed/v1/search?q=${this.state.search}%20hiking%20trails&key=AIzaSyB5KSiNWNW318XVycsRXfNYFjZNyz4IOa0`}
                 allowFullScreen>
               </iframe>
@@ -72,24 +69,25 @@ class TrailSearchContainer extends Component {
     })
 
     return(
-      <div>
-        <div className="small-12 medium-12 large-5 column">
-          <form onSubmit={this.searchTrails}>
-            <label htmlFor="search"></label>
-            <input name="search" placeholder="Search" value={this.state.search} onChange={this.handleItemChange}/>
-            <br/><br/>
-            <input type="submit" value="List Results" className="button" />
-          </form>
+      <Grid>
+        <Row>
+          <Col sm={12} lg={6}>
+            <form onSubmit={this.searchTrails} className="trail-search-form">
+              <label htmlFor="search"></label>
+              <input className="text" name="search" placeholder="Search" value={this.state.search} onChange={this.handleItemChange}/>
+              <br/><br/>
+              <input type="submit" value="List Results" className="button" />
+            </form>
+            <div className="map">
+              {map}
+            </div>
+          </Col>
 
-          <div className="map">
-            {map}
-          </div>
-        </div>
-
-        <div className="small-12 medium-12 large-7 column trail-search-list">
-          {trailComponents}
-        </div>
-      </div>
+          <Col sm={12} lg={6} className="trail-search-list">
+            {trailComponents}
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 }

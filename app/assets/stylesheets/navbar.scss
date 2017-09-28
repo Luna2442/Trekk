@@ -76,6 +76,10 @@ a {
   font-size: 1.25em;
 }
 
+a:hover {
+  color: #1ea1b8;
+}
+
 a::after {
   content:"";
   top: 80%;

@@ -24,6 +24,7 @@
     "dotenv-webpack": "^1.5.4",
     "fs": "0.0.1-security",
     "react": "^15.6.2",
+    "react-bootstrap": "^0.31.3",
     "react-dom": "^15.6.2",
     "react-grid-gallery": "^0.4.3",
     "react-images": "^0.5.6",
