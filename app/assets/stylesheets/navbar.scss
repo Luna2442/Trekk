@@ -1,57 +1,15 @@
-// .topnav {
-//     background-color: #0a2013;
-//     overflow: hidden;
-// }
-//
-// /* Style the links inside the navigation bar */
-// .topnav a {
-//     float: left;
-//     display: block;
-//     color: #f2f2f2;
-//     text-align: center;
-//     padding: 14px 16px;
-//     text-decoration: none;
-//     font-size: 25px;
-// }
-//
-// /* Change the color of links on hover */
-// .topnav a:hover {
-//     background-color: #f7bd0e;
-//     color: #414743;
-// }
-//
-// /* Add a color to the active/current link */
-// .topnav a.active {
-//     background-color: #f7bd0e;
-//     color: white;
-// }
-//
-// .username {
-//   color: white;
-//   float: right;
-// }
-//
-// .signin {
-//   color: white;
-//   float: right;
-// }
-//
-// .navigation {
-//   float: left;
-// }
-//
-//
-
-.logo {
-  float: left;
-}
-
 .wrapper {
+  margin: auto;
   height: 65px;
   display: flex;
   align-items: center;
   justify-content:center;
-  background-color: #343436;
+  width: 600px;
+  background-color: rgba(#000000, 0.7);
+}
+
+.logo {
+  float: left;
 }
 
 ul li a {
@@ -67,6 +25,10 @@ a.logo {
   list-style: none;
   margin: 0px;
   padding: 0px;
+}
+.navigation li {
+  margin-left: 10px;
+  margin-right:10px;
 }
 
 a {
