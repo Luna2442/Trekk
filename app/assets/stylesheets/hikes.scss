@@ -53,7 +53,6 @@ $break-large: 1000px;
 
 .notes-list {
   border: solid 2px black;
-  height: 85vh;
   border-radius: 10px;
   background: rgba(0, 0, 0, .7);
   float: right;
@@ -69,8 +68,17 @@ $break-large: 1000px;
 }
 
 .note-scroller {
-  overflow-y: scroll;
-  height:353px;
+
+  @media screen and (min-width: $break-small) {
+    overflow-y: scroll;
+    height: 35vh;
+  }
+
+  @media screen and (min-width: $break-large) {
+    overflow-y: scroll;
+    height: 50vh;
+  }
+
 }
 
 .note-form {
