@@ -2,28 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.trail-list {
+$break-small: 380px;
+$break-large: 1000px;
+
+.trail-tile {
   float: left;
   text-align: left;
   color: white;
 }
 
+.search-container {
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 25px;
+  background: rgba(0, 0, 0, .7);
+
+   @media screen and (min-width: $break-small) {
+     height: 35vh;
+     margin-bottom: 2%;
+   }
+
+   @media screen and (min-width: $break-large) {
+     height: 85vh;
+   }
+
+}
+
 .trail-search-list {
   border: solid 2px black;
   overflow-y: scroll;
-  height:85vh;
   border-radius: 10px;
   padding: 25px;
   background: rgba(0, 0, 0, .7);
-}
 
-.search-container {
-  border: solid 2px black;
-  overflow-y: scroll;
-  height:85vh;
-  border-radius: 10px;
-  padding: 25px;
-  background: rgba(0, 0, 0, .7);
+  @media screen and (min-width: $break-small) {
+    height: 55vh;
+  }
+
+  @media screen and (min-width: $break-large) {
+    height: 85vh;
+  }
+
 }
 
 .trail-search-form .text {
@@ -51,9 +70,10 @@
   border: solid 10px rgba(0, 0, 0, .7);
   background: rgba(0, 0, 0, .7);
   border-radius: 10px;
-}
 
-iframe {
-  height: 475px;
-  width: 100%;
+  iframe {
+    height: 475px;
+    width: 100%;
+  }
+
 }

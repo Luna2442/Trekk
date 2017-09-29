@@ -32,7 +32,7 @@ class TrailSearchTile extends Component {
     return(
       <Row>
         <Col sm={8} lg={8}>
-          <div className="trail-list" onClick={this.props.handleClick}>
+          <div className="trail-tile" onClick={this.props.handleClick}>
             <h4>{this.props.name}</h4>
             <p>{this.props.address}</p>
             <p>Rating: {this.props.rating}</p>
