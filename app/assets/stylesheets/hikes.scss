@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$break-small: 380px;
+$break-large: 1000px;
+
 .hikes-list {
   border: solid 2px black;
   color: white;
@@ -11,6 +14,15 @@
   border-radius: 10px;
   padding: 25px;
   margin-bottom: 2%;
+
+  @media screen and (min-width: $break-small) {
+    height: 25vh;
+  }
+
+  @media screen and (min-width: $break-large) {
+    height: 85vh;
+  }
+
 }
 
 .hikes-list h3 {
@@ -24,10 +36,10 @@
 
 .hike {
   margin-top: 2%;
-}
 
-.hike h4 {
-  cursor: pointer;
+  h4 {
+    cursor: pointer;
+  }
 }
 
 .delete-button {
@@ -45,6 +57,15 @@
   border-radius: 10px;
   background: rgba(0, 0, 0, .7);
   float: right;
+
+  @media screen and (min-width: $break-small) {
+    height: 55vh;
+  }
+
+  @media screen and (min-width: $break-large) {
+    height: 85vh;
+  }
+
 }
 
 .note-scroller {
@@ -56,27 +77,28 @@
   text-align: center;
   border-radius: 15px;
   margin-bottom: 15px;
-}
 
-.note-form h5 {
-  text-align: center;
-  color: white;
-}
+  h5 {
+    text-align: center;
+    color: white;
+  }
 
-.note-form input{
-  width: 80%;
-  height: 10%;
-}
+  input {
+    width: 80%;
+    height: 10%;
+  }
 
-.note-form textarea {
-  margin: auto;
-  width: 80%;
-  height: 10vh;
-}
+  textarea {
+    margin: auto;
+    width: 80%;
+    height: 10vh;
+  }
 
-.note-form .button {
-  width: 25%;
-  height: 10%;
+  .button {
+    width: 25%;
+    height: 10%;
+  }
+
 }
 
 .note-tile {
