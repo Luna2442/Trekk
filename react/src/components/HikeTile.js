@@ -1,37 +1,7 @@
 import React, {Component} from 'react';
-import Modal from 'react-modal';
 import UploadPhotoForm from './UploadPhotoForm';
 import Gallery from 'react-grid-gallery';
-import {Grid, Row, Col, Well} from 'react-bootstrap';
-
-let customStyles = {
-  overlay : {
-    position          : 'fixed',
-    margin            : 'auto',
-    top               : 200,
-    left              : 400,
-    right             : 400,
-    bottom            : 325,
-    backgroundColor   : 'black',
-    borderRadius      : 15,
-    opacity           : 0.9
-  },
-  content : {
-    color                      : 'white',
-    position                   : 'absolute',
-    top                        : '20px',
-    left                       : '20px',
-    right                      : '20px',
-    bottom                     : '20px',
-    border                     : '1px solid #ccc',
-    background                 : 'black',
-    overflow                   : 'auto',
-    WebkitOverflowScrolling    : 'touch',
-    borderRadius               : '4px',
-    outline                    : 'none',
-    padding                    : '20px'
-  }
-};
+import {Grid, Row, Col, Well, Modal} from 'react-bootstrap';
 
 class HikeTile extends Component {
   constructor(props){
@@ -141,13 +111,10 @@ class HikeTile extends Component {
             <Gallery images={photos} backdropClosesModal={true} rowHeight={100}/>
           </div>
         </div>
-        <Modal
-          isOpen={this.state.photoFormActive}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Edit Note"
-        >
-          <UploadPhotoForm hikeId={this.props.id} closeModal={this.closeModal} aggregatePhotos={this.aggregatePhotos}/>
+        <Modal show={this.state.photoFormActive}>
+          <Modal.Body>
+            <UploadPhotoForm hikeId={this.props.id} closeModal={this.closeModal} aggregatePhotos={this.aggregatePhotos}/>
+          </Modal.Body>
         </Modal>
 
       </Col>

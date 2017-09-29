@@ -61,7 +61,7 @@ class UpdateNoteForm extends Component {
         <br/><br/>
 
         <input type="submit" value="Update" className="button" />
-        <input type="submit" value="Cancel" className="button" onClick={this.props.closeModal} style={{float:'right'}}/>
+        <input type="submit" value="Cancel" className="button delete-button" onClick={this.props.closeModal} style={{float:'right'}}/>
       </form>
     )
   }

@@ -20,3 +20,5 @@ Rails.application.config.assets.precompile += %w( trails.css )
 Rails.application.config.assets.precompile += %w( users.css )
 
 Rails.application.config.assets.precompile += %w( hikes.css )
+
+Rails.application.config.assets.precompile += %w( modal.css )
