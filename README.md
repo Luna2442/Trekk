@@ -1,24 +1,24 @@
-# README
+# Trekk
+[Live Site](http://trekk-trails.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Synopsis
+Trekk is a journal for hikers. Trekk allows a user to create an account, search for hiking trails, and add them to their personal journal. The journal can be used for storing hiking trails of interest or as a personal record of hikes the user has gone on with notes and photos.
 
-Things you may want to cover:
+#### Features
+All journal entries and all notes/photos within are associated to each user.
 
-* Ruby version
+Makes use of Google's map API and places API for geolocation and listings of hiking trails, respectively.
 
-* System dependencies
+## Getting Started
+With rails and npm installed, clone this repo down and bundle / npm install. Run ```rails s``` and ```npm start``` to boot up the servers. Navigate to the default ```localhost:3000``` to view the site locally.
 
-* Configuration
+## Build
+Trekk uses a Ruby on Rails back end with React.js for the front end.
 
-* Database creation
+### Notable Gems / Node Packages
+* [Devise](https://github.com/plataformatec/devise) for user authentication.
+* [React-Bootstrap](https://react-bootstrap.github.io/) for responsive design and modal components.
+* [React-Grid-Gallery](https://benhowell.github.io/react-grid-gallery/) for photo display and slider presentation.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Motivation
+Hiking is something I love to do. Moving to a new city, this is a faster way to find hiking trails and information on them. Storing the trails keeps in easy record for your personal parsing through trails on Google.
