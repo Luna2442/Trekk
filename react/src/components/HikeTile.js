@@ -66,8 +66,6 @@ class HikeTile extends Component {
   }
 
   render() {
-
-
     let geography;
     let deleteButton;
     let uploadButton;
@@ -76,10 +74,8 @@ class HikeTile extends Component {
       geography =
       <div>
         <h5>Geography:</h5>
-
           <li>Latitude: {this.props.latitude}</li>
           <li>Longitude: {this.props.longitude}</li>
-
       </div>
       deleteButton = <input type='button' className="button delete-button" defaultValue='Remove this hike' onClick={this.deleteHike} />
       uploadButton = <input type='button' className="button" defaultValue='Add a photo' onClick={this.openModal} />

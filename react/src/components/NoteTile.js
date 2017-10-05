@@ -30,7 +30,6 @@ class NoteTile extends Component {
   }
 
   render() {
-
     let formattedTime = new Date(this.props.time).toString()
 
     return(

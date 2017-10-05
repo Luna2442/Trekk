@@ -48,7 +48,6 @@ class UpdateNoteForm extends Component {
           }}
         />
         <br/>
-
         <label htmlFor="body" style={{color:'white'}}>Body</label>
         <br/>
         <textArea type="text" name="body" value={this.state.body} onChange={this.handleItemChange}
@@ -59,7 +58,6 @@ class UpdateNoteForm extends Component {
             height: '22vh'}}
         />
         <br/><br/>
-
         <input type="submit" value="Update" className="button" />
         <input type="submit" value="Cancel" className="button delete-button" onClick={this.props.closeModal} style={{float:'right'}}/>
       </form>

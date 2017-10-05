@@ -47,7 +47,6 @@ class TrailSearchContainer extends Component {
   }
 
   render() {
-
     let map = <iframe
                 frameBorder="0"
                 src={`https://www.google.com/maps/embed/v1/search?q=${this.state.search}%20hiking%20trails&key=AIzaSyB5KSiNWNW318XVycsRXfNYFjZNyz4IOa0`}
