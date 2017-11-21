@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Grid, Row, Col, Well} from 'react-bootstrap';
-import TrailSearchTile from '../components/TrailSearchTile';
+import { connect } from 'react-redux';
+import { getTrails, searchComplete } from '../../redux/actions';
 import SearchedTrails from './SearchedTrails';
 
-export default class TrailSearchContainer extends Component {
+export class TrailSearchContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -16,6 +17,12 @@ export default class TrailSearchContainer extends Component {
 
   searchTrails(event){
     event.preventDefault();
+    
+    this.setState({
+      trails: []
+    })
+
+    this.props.dispatch(getTrails())
 
     fetch(`/api/v1/trails/${this.state.search}`, {
       credentials: 'same-origin'
@@ -24,6 +31,7 @@ export default class TrailSearchContainer extends Component {
       if (response.ok) {
         return response.json();
       } else {
+        this.props.dispatch(searchComplete())
         let errorMessage = `${response.status} ${response.statusText}`,
             error = new Error(errorMessage);
         throw(error);
@@ -33,6 +41,7 @@ export default class TrailSearchContainer extends Component {
       this.setState({
         trails: body.results
       })
+      this.props.dispatch(searchComplete())
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -76,3 +85,5 @@ export default class TrailSearchContainer extends Component {
     )
   }
 }
+
+export default connect()(TrailSearchContainer)

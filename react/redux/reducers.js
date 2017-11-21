@@ -14,11 +14,11 @@ export default function reducer(state = initialState, action){
             return {
                 trailsLoading: true
             }
-        case types.GET_TRAILS_FAILED:
+        case types.GET_TRAILS_REJECTED:
             return {
                 trailsLoading: false
             }
-        case types.GET_TRAILS_COMPLETED:
+        case types.GET_TRAILS_FULFILLED:
             return {
                 trailsLoading: false
             }

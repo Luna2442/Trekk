@@ -8,10 +8,12 @@ import TrailSearchTile from '../components/TrailSearchTile';
 
 export class SearchedTrails extends Component {
 
-
-
-
     render() {
+        let loader;
+
+        if (this.props.trailsLoading) {
+            loader = <ReactLoading type='bars' color='#f5f5f5' />
+        }
         let trailComponents = this.props.trails.map((trail) => {
             return(
               <TrailSearchTile
@@ -26,12 +28,12 @@ export class SearchedTrails extends Component {
             )
           })
 
-          return (
-              <div>
+        return (
+            <div>
                 {trailComponents}
-              </div>
-          )
-
+                {loader}
+            </div>
+        )
     }
 }
 
