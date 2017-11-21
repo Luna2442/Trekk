@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import TrailSearchTile from '../components/TrailSearchTile';
 import {Grid, Row, Col, Well} from 'react-bootstrap';
+import TrailSearchTile from '../components/TrailSearchTile';
+import SearchedTrails from './SearchedTrails';
 
-class TrailSearchContainer extends Component {
+export default class TrailSearchContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -15,9 +16,6 @@ class TrailSearchContainer extends Component {
 
   searchTrails(event){
     event.preventDefault();
-    let init = {
-      credentials: 'same-origin'
-    };
 
     fetch(`/api/v1/trails/${this.state.search}`, {
       credentials: 'same-origin'
@@ -53,20 +51,6 @@ class TrailSearchContainer extends Component {
                 allowFullScreen>
               </iframe>
 
-    let trailComponents = this.state.trails.map((trail) => {
-      return(
-        <TrailSearchTile
-          key = {trail.id}
-          id = {trail.id}
-          name = {trail.name}
-          address = {trail.formatted_address}
-          geometry = {trail.geometry}
-          rating = {trail.rating}
-          types = {trail.types}
-        />
-      )
-    })
-
     return(
       <Grid>
         <Row>
@@ -85,12 +69,10 @@ class TrailSearchContainer extends Component {
           </Col>
 
           <Col sm={12} lg={6} className="trail-search-list">
-            {trailComponents}
+            <SearchedTrails trails={this.state.trails} />
           </Col>
         </Row>
       </Grid>
     )
   }
 }
-
-export default TrailSearchContainer;

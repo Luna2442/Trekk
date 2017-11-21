@@ -1,0 +1,6 @@
+// Search Trails
+
+export const GET_TRAILS = 'GET_TRAILS'
+export const GET_TRAILS_PENDING = 'GET_TRAILS_PENDING'
+export const GET_TRAILS_FAILED = 'GET_TRAILS_FAILED'
+export const GET_TRAILS_COMPLETED = 'GET_TRAILS_COMPLETED'
