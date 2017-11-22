@@ -2,6 +2,7 @@ import * as types from '../types';
 
 const initialState = {
     hikesLoading: false,
+    selectedHike: null,
     myHikes: []
 }
 
@@ -26,6 +27,11 @@ export default function reducer(state = initialState, action){
             return {
                 hikesLoading: false,
                 myHikes: action.payload
+            }
+        case types.SELECT_HIKE:
+            return {
+                ...state,
+                selectedHike: action.payload
             }
         default:
             return state

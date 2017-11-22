@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+
 import UploadPhotoForm from './UploadPhotoForm';
 import Gallery from 'react-grid-gallery';
 import {Grid, Row, Col, Well, Modal} from 'react-bootstrap';
@@ -70,7 +72,7 @@ class HikeTile extends Component {
     let deleteButton;
     let uploadButton;
     let photos = [];
-    if(this.props.latitude && this.props.longitude){
+    if(this.props.id === this.props.selectedHike){
       geography =
       <div>
         <h5>Geography:</h5>
@@ -118,4 +120,12 @@ class HikeTile extends Component {
   }
 }
 
-export default HikeTile;
+let mapStateToProps = (store) => {
+  return {
+    hikesLoading: store.hikesLoading,
+    selectedHike: store.hikes.selectedHike,
+    hikes: store.hikes.myHikes
+  }
+}
+
+export default connect(mapStateToProps)(HikeTile);

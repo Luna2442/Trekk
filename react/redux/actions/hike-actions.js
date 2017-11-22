@@ -6,3 +6,10 @@ export function getHikes(promise){
         payload: promise
     }
 }
+
+export function selectHike(id){
+    return {
+        type: types.SELECT_HIKE,
+        payload: id
+    }
+}
