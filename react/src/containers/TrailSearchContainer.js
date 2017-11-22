@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Grid, Row, Col, Well} from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { clearTrails, getTrails } from '../../redux/actions';
-import SearchedTrails from './SearchedTrails';
+import { clearTrails, getTrails } from '../../redux/actions/trail-actions';
+import SearchedTrails from '../components/SearchedTrails';
 
 export class TrailSearchContainer extends Component {
   constructor(props){

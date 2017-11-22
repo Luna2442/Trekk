@@ -1,7 +1,13 @@
 
-// Search Trails
+// Trail Actions
 export const GET_TRAILS = 'GET_TRAILS'
 export const GET_TRAILS_PENDING = 'GET_TRAILS_PENDING'
 export const GET_TRAILS_REJECTED = 'GET_TRAILS_REJECTED'
 export const GET_TRAILS_FULFILLED = 'GET_TRAILS_FULFILLED'
 export const CLEAR_TRAILS = 'CLEAR_TRAILS'
+
+// Hike Actons
+export const GET_HIKES = 'GET_HIKES'
+export const GET_HIKES_PENDING = 'GET_HIKES_PENDING'
+export const GET_HIKES_REJECTED = 'GET_HIKES_REJECTED'
+export const GET_HIKES_FULFILLED = 'GET_HIKES_FULFILLED'

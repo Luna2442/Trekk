@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { getHikes } from '../../redux/actions/hike-actions';
+
 import HikeTile from '../components/HikeTile';
 import NotesContainer from './NotesContainer';
+
 import {Grid, Row, Col, Well} from 'react-bootstrap';
+import { setTimeout } from 'timers';
 
 class JournalContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      hikes: [],
       id: null
     }
     this.aggregateHikes = this.aggregateHikes.bind(this)
@@ -16,18 +20,13 @@ class JournalContainer extends Component {
 
   aggregateHikes(){
     setTimeout(function(){
-      let path = location.pathname
-      fetch(`/api/v1/${path}/`, {
-        credentials: 'same-origin'
-      })
-      .then(response => {
-        return response.json();
-      })
-      .then(body => {
-        this.setState({
-          hikes: body
-        })
-      })}.bind(this), 100)
+      this.props.dispatch(
+        getHikes(
+          fetch(`/api/v1/users/:id`, {credentials: 'same-origin'})
+          .then(response => response.ok ? response.json() : new UserException('Bad Fetch'))
+        )
+      )
+    }.bind(this), 100)
   }
 
   handleOpenHike(id){
@@ -35,29 +34,18 @@ class JournalContainer extends Component {
   }
 
   componentDidMount(){
-    fetch('/api/v1/users/:id', {
-      credentials: 'same-origin'
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        let errorMessage = `${response.status} ${response.statusText}`,
-            error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(body => {
-      this.setState({
-        hikes: body
-      })
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+
+    this.props.dispatch(
+      getHikes(
+        fetch(`/api/v1/users/:id`, {credentials: 'same-origin'})
+        .then(response => response.ok ? response.json() : new UserException('Bad Fetch'))
+      )
+    )
   }
 
   render() {
     let hikes;
-    hikes = this.state.hikes.map((hike) => {
+    hikes = this.props.hikes.map((hike) => {
 
       let handleClick = () => {
         if (this.state.id !== hike.id) {
@@ -115,4 +103,11 @@ class JournalContainer extends Component {
   }
 }
 
-export default JournalContainer;
+let mapStateToProps = (store) => {
+  return {
+    hikesLoading: store.trailsLoading,
+    hikes: store.hikes.myHikes
+  }
+}
+
+export default connect(mapStateToProps)(JournalContainer);

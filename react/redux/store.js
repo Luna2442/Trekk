@@ -1,4 +1,4 @@
-import reducer from './reducers';
+import rootReducer from './reducers/index';
 import { applyMiddleware, createStore, compose } from 'redux'
 import { createLogger } from 'redux-logger'
 import promise from 'redux-promise-middleware'
@@ -10,4 +10,4 @@ let extraSauce = null
 if (window.__REDUX_DEVTOOLS_EXTENSION__) extraSauce = compose(middleware, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 else extraSauce = middleware
 
-export default createStore(reducer, extraSauce)
+export default createStore(rootReducer, extraSauce)
