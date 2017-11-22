@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import {Grid, Row, Col, Well} from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { getTrails, searchComplete } from '../../redux/actions';
+import { clearTrails, getTrails } from '../../redux/actions';
 import SearchedTrails from './SearchedTrails';
 
 export class TrailSearchContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      search: '',
-      trails: []
+      search: ''
     }
     this.searchTrails = this.searchTrails.bind(this)
     this.handleItemChange = this.handleItemChange.bind(this)
@@ -17,33 +16,15 @@ export class TrailSearchContainer extends Component {
 
   searchTrails(event){
     event.preventDefault();
-    
-    this.setState({
-      trails: []
-    })
 
-    this.props.dispatch(getTrails())
+    this.props.dispatch(clearTrails())
 
-    fetch(`/api/v1/trails/${this.state.search}`, {
-      credentials: 'same-origin'
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        this.props.dispatch(searchComplete())
-        let errorMessage = `${response.status} ${response.statusText}`,
-            error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(body => {
-      this.setState({
-        trails: body.results
-      })
-      this.props.dispatch(searchComplete())
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+    this.props.dispatch(
+      getTrails(
+        fetch(`/api/v1/trails/${this.state.search}`, {credentials: 'same-origin'})
+        .then(response => response.ok ? response.json() : new UserException('Bad Fetch'))
+      )
+    )
   }
 
   handleItemChange(event){
@@ -78,7 +59,7 @@ export class TrailSearchContainer extends Component {
           </Col>
 
           <Col sm={12} lg={6} className="trail-search-list">
-            <SearchedTrails trails={this.state.trails} />
+            <SearchedTrails />
           </Col>
         </Row>
       </Grid>
