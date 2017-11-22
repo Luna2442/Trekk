@@ -26,7 +26,7 @@ class JournalContainer extends Component {
       <Grid>
         <Row>
           <Col sm={12} lg={4} className="hikes-list">
-            <MyHikes />
+            <MyHikes hikes={this.props.hikes} selectedHike={this.props.selectedHike} />
           </Col>
           <Col sm={12} lg={7} className="notes-list">
             <HikeNotes selectedHike={this.props.selectedHike} changeSelectedHike={this.handleOpenHike} />

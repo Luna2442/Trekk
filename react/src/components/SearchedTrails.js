@@ -31,8 +31,8 @@ export class SearchedTrails extends Component {
 
         return (
             <div>
-                {trailComponents}
                 {loader}
+                {trailComponents}
             </div>
         )
     }

@@ -81,12 +81,4 @@ class MyHikes extends Component {
   }
 }
 
-let mapStateToProps = (store) => {
-  return {
-    hikesLoading: store.hikesLoading,
-    selectedHike: store.hikes.selectedHike,
-    hikes: store.hikes.myHikes
-  }
-}
-
-export default connect(mapStateToProps)(MyHikes);
+export default connect()(MyHikes);
