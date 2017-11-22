@@ -12,17 +12,3 @@ export function getTrails(promise) {
          type: types.CLEAR_TRAILS
      }
  }
-
-// original action for simplicity
-
-// export function getTrails() {
-//    return {
-//         type: types.GET_TRAILS_PENDING
-//    } 
-// }
-
-// export function searchComplete() {
-//     return {
-//          type: types.GET_TRAILS_FULFILLED
-//     } 
-//  }
